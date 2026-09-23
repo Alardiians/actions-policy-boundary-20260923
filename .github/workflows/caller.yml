@@ -1,0 +1,7 @@
+name: Policy identity caller
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  pinned-reusable:
+    uses: Alardiians/actions-policy-boundary-20260923/.github/workflows/identity.yml@effc6d455d6f0568afdc02f63dadb83dff864713
