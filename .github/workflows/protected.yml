@@ -1,0 +1,12 @@
+name: Policy protected
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Policy producer"]
+    types: [completed]
+permissions: {}
+jobs:
+  mark:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo POLICY_PROTECTED_MARKER=20260923
