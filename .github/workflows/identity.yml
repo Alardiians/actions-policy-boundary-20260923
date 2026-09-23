@@ -1,0 +1,23 @@
+name: Policy identity reusable
+on:
+  workflow_call:
+permissions: {}
+jobs:
+  identity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print public workflow identity
+        env:
+          JOB_REF: ${{ job.workflow_ref }}
+          JOB_SHA: ${{ job.workflow_sha }}
+          JOB_REPO: ${{ job.workflow_repository }}
+          JOB_PATH: ${{ job.workflow_file_path }}
+          CALLER_REF: ${{ github.workflow_ref }}
+          CALLER_SHA: ${{ github.workflow_sha }}
+        run: |
+          echo "JOB_REF=$JOB_REF"
+          echo "JOB_SHA=$JOB_SHA"
+          echo "JOB_REPO=$JOB_REPO"
+          echo "JOB_PATH=$JOB_PATH"
+          echo "CALLER_REF=$CALLER_REF"
+          echo "CALLER_SHA=$CALLER_SHA"
