@@ -1,0 +1,9 @@
+name: Policy producer
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo POLICY_PRODUCER_MARKER=20260923
